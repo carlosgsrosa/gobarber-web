@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext, useCallback } from "react";
 
-import api from "../services/api";
+// import api from "../services/api";
 
 interface AuthState {
   token: string;
@@ -33,12 +33,19 @@ export const AuthProvider: React.FC = ({ children }) => {
   });
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post("sessions", {
-      email,
-      password,
-    });
+    // const response = await api.post("sessions", {
+    //   email,
+    //   password,
+    // });
 
-    const { token, user } = response.data;
+    // const { token, user } = response.data;
+
+    const token =
+      "ksladjkajdlakjaklsdlkadjkl#jkproiqwopriqrupqopwrupufasfpoajsfaspj";
+    const user = {
+      email: "carlao.garcia@gmail.com",
+      password: "aslkdhkadja",
+    };
 
     localStorage.setItem("@GoBarber:token", token);
     localStorage.setItem("@GoBarber:user", JSON.stringify(user));
